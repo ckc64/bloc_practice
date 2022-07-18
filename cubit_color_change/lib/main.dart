@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() {
   BlocOverrides.runZoned(
     () {
-      runApp(MyApp());
+      runApp(const MyApp());
     },
     blocObserver: ColorBlocObserver(),
   );
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                 ),
               );
             } else if (state is ColorNetworkFetching) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else {
               return Container();
             }
