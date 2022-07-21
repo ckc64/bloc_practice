@@ -19,7 +19,7 @@ class SimpleCalculatorCubit extends Cubit<SimpleCalculatorState> {
   }
 
   dynamic setOperand(String operand) {
-    isSelected = false;
+    print("first $isSelected");
     switch (operand) {
       case '+':
         operandState = Addition;
@@ -29,23 +29,24 @@ class SimpleCalculatorCubit extends Cubit<SimpleCalculatorState> {
       case '-':
         operandState = Subtraction;
         operandSymbol = '-';
-        isSelected = true;
+
         break;
       case 'x':
         operandState = Multiplication;
         operandSymbol = 'x';
-        isSelected = true;
+
         break;
       case '/':
         operandState = Division;
         operandSymbol = '/';
-        isSelected = true;
+
         break;
       default:
         operandSymbol = ' ';
-        isSelected = false;
+
         break;
     }
+    print("second $isSelected");
   }
 
   void executeOperation(String num1, String num2) {
